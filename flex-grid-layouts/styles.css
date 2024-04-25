@@ -1,0 +1,301 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1202px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+h1 {
+  margin-bottom: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* HEADER */
+
+.header {
+  background-color: #000;
+  width: 100%;
+  color: white;
+  padding-block: 20px;
+}
+
+.header .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.header .logo {
+  font-size: 2rem;
+}
+
+/* FLEXBOX */
+
+.flexbox {
+  padding-block: 60px;
+}
+
+.flexbox .container__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.flexbox .container__cards .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* GRID */
+
+.grid {
+  padding-block: 60px;
+}
+
+.grid .content {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 32px;
+}
+
+.grid .content__cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (max-width: 940px) {
+  .grid .content {
+    grid-template-columns: 1fr;
+  }
+
+  .grid .content__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid .content__cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* GRID 2 */
+
+.grid2 {
+  padding-block: 60px;
+}
+
+.grid2 .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.grid2 .content p {
+  background-color: black;
+  color: white;
+  padding: 15px;
+}
+
+.grid2 .content__cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.grid2 .content__card-destaque {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid2 .content__cards__card {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid2 img {
+  flex: 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 768px) {
+  .grid2 .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+}
+
+/* Desafio 1 */
+
+.desafio-1 {
+  padding-block: 60px;
+}
+
+.desafio-1 .content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.desafio-1 p {
+  padding: 10px;
+}
+
+.desafio-1 .content__noticias {
+  display: flex;
+  gap: 30px;
+}
+
+.content__bermudas__destaque {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.desafio-1 .content__bermudas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.desafio-1 .content__bermudas__recomendados {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.desafio-1 .content__bermudas__recomendados__card {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .desafio-1 .content__noticias {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .desafio-1 .content__bermudas {
+    grid-template-columns: 1fr;
+  }
+
+  .desafio-1 .content__bermudas__recomendados {
+    align-items: start;
+    width: 370px;
+    max-width: 370px;
+    margin-inline: auto;
+  }
+
+  .desafio-1 .content__bermudas__recomendados__card {
+    flex-direction: row;
+  }
+}
+
+/* Desafio 2 */
+
+.desafio-2 {
+  padding-block: 60px;
+}
+
+.desafio-2 input {
+  height: 59px;
+  background-color: #bbbbbb;
+  border: none;
+}
+
+.desafio-2 .content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.desafio-2 .content__inputs {
+  display: grid;
+  grid-template-columns: 4fr 6fr 2fr;
+  grid-template-rows: 59px 59px 59px 59px;
+  grid-template-areas:
+    "cep cep cep"
+    "rua rua rua"
+    "numero complemento complemento"
+    "bairro cidade estado";
+  gap: 30px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.cep {
+  grid-area: cep;
+}
+
+.rua {
+  grid-area: rua;
+}
+
+.numero {
+  grid-area: numero;
+}
+
+.complemento {
+  grid-area: complemento;
+}
+
+.bairro {
+  grid-area: bairro;
+}
+
+.cidade {
+  grid-area: cidade;
+}
+
+.estado {
+  grid-area: estado;
+}
