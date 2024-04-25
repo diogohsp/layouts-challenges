@@ -49,6 +49,7 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 30px;
 }
 
 .menu ul {
@@ -59,6 +60,12 @@ a {
 
 .header .logo {
   font-size: 2rem;
+}
+
+@media(max-width: 500px) {
+  .header .container {
+    flex-direction: column;
+  }
 }
 
 /* FLEXBOX */
@@ -80,6 +87,8 @@ a {
   flex-direction: column;
   align-items: center;
 }
+
+@media(max-width: 500px){}
 
 /* GRID */
 
@@ -255,7 +264,7 @@ a {
   grid-template-columns: 4fr 6fr 2fr;
   grid-template-rows: 59px 59px 59px 59px;
   grid-template-areas:
-    "cep cep cep"
+    "cep none none"
     "rua rua rua"
     "numero complemento complemento"
     "bairro cidade estado";
@@ -298,4 +307,19 @@ input[type="number"] {
 
 .estado {
   grid-area: estado;
+}
+
+@media (max-width: 640px) {
+  .desafio-2 .content__inputs {
+    grid-template-columns: 1fr;
+    grid-template-rows: 59px 59px 59px 59px 59px 59px 59px;
+    grid-template-areas:
+      "cep"
+      "rua "
+      "numero"
+      "complemento"
+      "bairro"
+      "cidade"
+      "estado";
+  }
 }
